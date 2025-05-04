@@ -1,0 +1,6 @@
+alias c="clear"
+alias lg="lazygit"
+alias n="nvim ."
+alias srcz="source ~/.zshrc"
+alias venvls="ls -l ~/workspace/venvs/"
+alias x="exit"
