@@ -76,7 +76,6 @@ plugins=(
 	gh
 	git
 	zoxide
-	zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
