@@ -75,7 +75,6 @@ ZSH_THEME=""
 plugins=(
 	gh
 	git
-	zoxide
 )
 
 source $ZSH/oh-my-zsh.sh
