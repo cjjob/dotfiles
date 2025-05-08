@@ -124,7 +124,9 @@ source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval $(thefuck --alias)
+eval "$(thefuck --alias)"
+
+eval "$(zoxide init zsh)"
 
 # bun
 export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
