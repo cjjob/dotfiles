@@ -55,7 +55,7 @@
 
 #########################
 # Environment variables #
-##########################
+#########################
 
 # ZSH configuration
 export ZDOTDIR="$HOME/.config/zsh" # Put .zshrc (and any others) here.
