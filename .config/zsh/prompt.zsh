@@ -26,7 +26,21 @@ zstyle ':vcs_info:git:*' formats 'branch:%b'
 # Newline: https://superuser.com/questions/382503/how-can-i-put-a-newline-in-my-zsh-prompt-without-causing-terminal-redraw-issues
 precmd() {
 	vcs_info # Different to the autoload. This makes the info available.
-	print -rP "%F{#000000}%~%f %F{#FA6E07}%B${vcs_info_msg_0_}%b%f"
+	# Get stytem appearance to determine if dark or light mode.
+	local system_appearance=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+	if [[ $system_appearance == "Dark" ]]; then
+		local dir_color="#FFFFFF"
+	else
+		local dir_color="#000000"
+	fi
+	print -rP "%F{$dir_color}%~%f %F{#FA6E07}%B${vcs_info_msg_0_}%b%f"
 }
 
-export PROMPT="${colored_exit_code}%f $(echo "\uf0e7") " #  is the symbol.
+#  \uef15
+#  \uf0e7
+#  \uf140
+#  \ueee9
+#  \uf4c3
+#  \uf444
+#  \uf120
+export PROMPT="${colored_exit_code}%f $(echo "\uf444") "
