@@ -1,14 +1,15 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
--- Haven't really got this working. Keymaps are commented out below.
-local resurrect = wezterm.plugin.require 'https://github.com/MLFlexer/resurrect.wezterm'
+-- TODO: Get this working.
+-- Keymaps are commented out below.
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font('JetBrains Mono', { weight = 'Light', italic = false })
+config.font = wezterm.font("JetBrains Mono", { weight = "Medium", italic = false })
 config.font_size = 13
 
 -- Follow system light/dark mode.
@@ -18,14 +19,14 @@ local function get_appearance()
     if wezterm.gui then
         return wezterm.gui.get_appearance()
     end
-    return 'Dark'
+    return "Dark"
 end
 
 local function scheme_for_appearance(appearance)
-    if appearance:find 'Dark' then
-        return 'Tokyo Night (Gogh)'
+    if appearance:find("Dark") then
+        return "Tokyo Night (Gogh)"
     else
-        return 'Tokyo Night Light (Gogh)'
+        return "Tokyo Night Light (Gogh)"
     end
 end
 
@@ -33,8 +34,8 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 -- config.enable_tab_bar = false
 -- https://wezterm.org/config/lua/config/window_decorations.html
-config.window_decorations = 'RESIZE'
-config.window_close_confirmation = 'NeverPrompt'
+config.window_decorations = "RESIZE"
+config.window_close_confirmation = "NeverPrompt"
 
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 10
@@ -45,73 +46,73 @@ local act = wezterm.action
 config.keys = {
     -- Split panes.
     {
-        key = 'v',
-        mods = 'SUPER|SHIFT',
-        action = act.SplitVertical { domain = 'CurrentPaneDomain' },
+        key = "v",
+        mods = "SUPER|SHIFT",
+        action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
     },
     {
-        key = 'h',
-        mods = 'SUPER|SHIFT',
-        action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
+        key = "h",
+        mods = "SUPER|SHIFT",
+        action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
     },
     -- Focus panes.
     {
-        key = 'UpArrow',
-        mods = 'SUPER',
-        action = act.ActivatePaneDirection 'Up',
+        key = "UpArrow",
+        mods = "SUPER",
+        action = act.ActivatePaneDirection("Up"),
     },
     {
-        key = 'DownArrow',
-        mods = 'SUPER',
-        action = act.ActivatePaneDirection 'Down',
+        key = "DownArrow",
+        mods = "SUPER",
+        action = act.ActivatePaneDirection("Down"),
     },
     {
-        key = 'LeftArrow',
-        mods = 'SUPER',
-        action = act.ActivatePaneDirection 'Left',
+        key = "LeftArrow",
+        mods = "SUPER",
+        action = act.ActivatePaneDirection("Left"),
     },
     {
-        key = 'RightArrow',
-        mods = 'SUPER',
-        action = act.ActivatePaneDirection 'Right',
+        key = "RightArrow",
+        mods = "SUPER",
+        action = act.ActivatePaneDirection("Right"),
     },
     -- Resize panes.
     {
-        key = 'i',
-        mods = 'SUPER',
-        action = act.AdjustPaneSize { 'Up', 2 },
+        key = "i",
+        mods = "SUPER",
+        action = act.AdjustPaneSize({ "Up", 2 }),
     },
     {
-        key = 'k',
-        mods = 'SUPER',
-        action = act.AdjustPaneSize { 'Down', 2 },
+        key = "k",
+        mods = "SUPER",
+        action = act.AdjustPaneSize({ "Down", 2 }),
     },
     {
-        key = 'j',
-        mods = 'SUPER',
-        action = act.AdjustPaneSize { 'Left', 2 },
+        key = "j",
+        mods = "SUPER",
+        action = act.AdjustPaneSize({ "Left", 2 }),
     },
     {
-        key = 'l',
-        mods = 'SUPER',
-        action = act.AdjustPaneSize { 'Right', 2 },
+        key = "l",
+        mods = "SUPER",
+        action = act.AdjustPaneSize({ "Right", 2 }),
     },
 
     -- Delete the whole line (SUPER+Backspace).
     {
-        key = 'Backspace',
-        mods = 'SUPER',
-        action = act.SendKey {
-            key = 'u',
-            mods = 'CTRL',
-        },
+        key = "Backspace",
+        mods = "SUPER",
+        action = act.SendKey({
+            key = "u",
+            mods = "CTRL",
+        }),
     },
     -- Ignore CTRL+Down.
     -- TODO: My Copilot CTRL+Down isn't working.
     -- I thought WezTerm was intercepting. But, this hasn't fixed.
     {
-        key = 'DownArrow',
-        mods = 'CTRL',
+        key = "DownArrow",
+        mods = "CTRL",
         action = act.DisableDefaultAssignment,
     },
     -- -- resurrect.wezterm
