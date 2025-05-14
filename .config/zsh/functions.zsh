@@ -1,3 +1,20 @@
+# Explore the output any file producing command with fzf
+function peek() {
+	# Check if a command is provided.
+	if [ "$#" -eq 0 ]; then
+		echo "Error: No command provided."
+		echo "Usage: peek <command>"
+		return 1
+	fi
+
+	# Execute the command and pipe the output to fzf.
+	"$@" |
+		fzf --style full \
+			--border --padding 1,2 \
+			--border-label ' Peeking... ' --input-label ' Input ' --header-label ' File Type ' \
+			--preview 'fzf-preview.sh {}'
+}
+
 # 'venvsrc $env' to source a specific venv.
 function venvsrc() {
 	# Check a single argument is passed.
@@ -8,7 +25,7 @@ function venvsrc() {
 	fi
 
 	venv_path="$HOME/workspace/venvs/$1"
-	
+
 	# Check if the argument is a valid directory.
 	if [ ! -d "$venv_path" ]; then
 		echo "Error: $venv_path is not a valid directory."
