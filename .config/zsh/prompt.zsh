@@ -43,4 +43,6 @@ precmd() {
 #  \uf4c3
 #  \uf444
 #  \uf120
-export PROMPT="${colored_exit_code}%f $(echo "\uf444") "
+#  \uf118
+# export PROMPT="${colored_exit_code}%f $(echo "\uf118")  "
+export PROMPT="${colored_exit_code}%f "
