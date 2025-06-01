@@ -3,6 +3,10 @@ tap "jesseduffield/lazygit"
 brew "bat"
 # Python code formatter
 brew "black"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
@@ -27,14 +31,14 @@ brew "neovim"
 brew "node"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Pretty, minimal and fast ZSH prompt
-brew "pure"
 # SVG rendering tool and library
 brew "resvg"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Autoformat shell script source code
+brew "shfmt"
 # Opinionated Lua code formatter
 brew "stylua"
 # Programmatically correct mistyped console commands
@@ -49,6 +53,8 @@ brew "yadm"
 brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Real-time type-ahead completion for Zsh
+brew "zsh-autocomplete"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
