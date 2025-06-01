@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps Lock +  ijkl->Arrow Keys ; e->Esc ; Cmd->Ctrl ; Backspace -> Delete",
+                        "description": "Caps Lock + ijkl->Arrow Keys ; e->Esc ; Cmd->Ctrl ; Backspace->Delete ; #->F15",
                         "manipulators": [
                             {
                                 "from": {
@@ -164,11 +164,37 @@
                                 },
                                 "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "f15" }],
+                                "type": "basic"
                             }
                         ]
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 50489,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
