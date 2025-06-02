@@ -3,6 +3,12 @@ tap "jesseduffield/lazygit"
 brew "bat"
 # Python code formatter
 brew "black"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -17,6 +23,10 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Client library for huggingface.co hub
+brew "huggingface-cli"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Sort Python imports automatically
@@ -31,6 +41,10 @@ brew "neovim"
 brew "node"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Object-relational database system
+brew "postgresql@17"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
 # SVG rendering tool and library
 brew "resvg"
 # Search tool like grep and The Silver Searcher
@@ -43,6 +57,8 @@ brew "shfmt"
 brew "stylua"
 # Programmatically correct mistyped console commands
 brew "thefuck"
+# Official tldr client written in Rust
+brew "tlrc"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Internet file retriever
@@ -63,6 +79,8 @@ brew "zsh-syntax-highlighting"
 brew "zsh-you-should-use"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
+# App to build and share containerised applications and microservices
+cask "docker"
 # Web browser
 cask "firefox"
 cask "font-symbols-only-nerd-font"
