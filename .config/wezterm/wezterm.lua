@@ -30,7 +30,8 @@ local function scheme_for_appearance(appearance)
     end
 end
 
-config.color_scheme = scheme_for_appearance(get_appearance())
+-- config.color_scheme = scheme_for_appearance(get_appearance())
+config.color_scheme = "Tokyo Night (Gogh)"
 
 -- config.enable_tab_bar = false
 -- https://wezterm.org/config/lua/config/window_decorations.html
