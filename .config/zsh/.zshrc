@@ -19,7 +19,4 @@ source $(brew --prefix)/share/zsh-you-should-use/you-should-use.plugin.zsh
 eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
 
-fastfetch \
-	--logo ~/.config/fastfetch/custom_logo.txt \
-	--logo-type file
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
